@@ -36,6 +36,9 @@ jobs:
         cache: 'npm'
         cache-dependency-path: ./ansible-project/nodejs/package-lock.json
     - run: npm install
+      working-directory: ./ansible-project/nodejs
     - run: npm run build --if-present
+      working-directory: ./ansible-project/nodejs
     - run: npm test
+      working-directory: ./ansible-project/nodejs
       # working-directory: ${{ env.working-directory}}
