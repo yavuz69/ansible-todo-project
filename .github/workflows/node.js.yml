@@ -13,7 +13,7 @@ defaults:
   run:
     shell: bash
     # Define the working directory for all run steps in the workflow
-    working-directory: ./ansible-project/nodejs
+    working-directory: ansible-todo-project/ansible-project/nodejs
 
 jobs:
   build:
