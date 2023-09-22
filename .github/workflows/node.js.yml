@@ -9,12 +9,18 @@ on:
   pull_request:
     branches: [ "main" ]
 
+defaults:
+  run:
+    shell: bash
+    # Define the working directory for all run steps in the workflow
+    working-directory: ./ansible-project/nodejs
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./ansible-project/nodejs
+    # env:
+    #   working-directory: ./ansible-project/nodejs
 
     strategy:
       matrix:
@@ -31,4 +37,4 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-      working-directory: ${{ env.working-directory}}
+      # working-directory: ${{ env.working-directory}}
